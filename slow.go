@@ -4,16 +4,6 @@ import (
 	"time"
 )
 
-// const debounce = (func, delay) => {
-// 	let inDebounce
-// 	return function() {
-// 	  const context = this
-// 	  const args = arguments
-// 	  clearTimeout(inDebounce)
-// 	  inDebounce = setTimeout(() => func.apply(context, args), delay)
-// 	}
-//   }
-
 // Options ...
 type Options struct {
 	Leading  bool
@@ -126,6 +116,12 @@ func Debounce(fn func(), wait time.Duration, options *Options) func() {
 }
 
 // Throttle ...
+//
+// leading := true
+//
+// maxWait := wait
+//
+// trailing := true
 func Throttle(fn func(), wait time.Duration, options *Options) func() {
 	leading := true
 	trailing := true
